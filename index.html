@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Factors that Influence Students Using AI for Illustration and Design - Survey</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+  body{background:#e8e8e8;color:#222}
+  .topbar{position:sticky;top:0;z-index:100;background:#0b2a5a;color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+  .topbar b{font-size:14px}
+  .progress{height:10px;background:#333;border-radius:10px;overflow:hidden;flex:1;min-width:150px}
+  #progFill{height:100%;background:#00ff88;width:0%;transition:width .3s}
+  .container{max-width:900px;margin:16px auto;padding:0 12px 40px}
+  .page{background:#fff;border-radius:14px;padding:22px;margin-bottom:16px;box-shadow:0 4px 20px rgba(0,0,0,.1)}
+  .page h1{font-size:22px;text-align:center;line-height:1.3;color:#0b2a5a}
+  .page h2{font-size:17px;margin:14px 0 8px;color:#0b2a5a;border-left:5px solid #ffe600;padding-left:10px}
+  .page h3{font-size:14px;margin:12px 0 6px}
+  .center{text-align:center}
+  .muted{font-size:12px;color:#555;line-height:1.5}
+  .warn{background:#fff3cd;border:2px solid #ffcc00;padding:12px;border-radius:10px;font-size:13px;line-height:1.6;margin:12px 0}
+  .warn b{color:#b10000}
+  .field{margin:10px 0}
+  .field label{font-size:13px;font-weight:bold;display:block;margin-bottom:5px}
+  input[type="text"], input[type="number"], select{width:100%;padding:11px;border:2px solid #ccc;border-radius:10px;font-size:14px}
+  input:focus{border-color:#0b2a5a;outline:none}
+  input.locked, select.locked{background:#eaffea;border-color:#00aa55}
+  .options{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0}
+  .opt{flex:1;min-width:130px;border:2px solid #ddd;border-radius:12px;padding:10px;cursor:pointer;font-size:13px;background:#f9f9f9;display:flex;gap:8px;align-items:center}
+  .opt:hover{border-color:#0b2a5a}
+  .opt.selected{background:#d6ffdf;border-color:#00aa55}
+  .opt.locked{opacity:.55;cursor:not-allowed}
+  .opt.locked.selected{opacity:1;background:#c8ffd6;border-color:#008844}
+  .opt input{accent-color:#00aa55;width:18px;height:18px}
+  .qbox{border:1px solid #e0e0e0;border-radius:12px;padding:12px;margin:10px 0;background:#fdfdfd}
+  .qbox.lockedQ{border-color:#00aa55;background:#f0fff4}
+  .qbox .qtitle{font-size:13px;line-height:1.5;font-weight:bold}
+  .qbox .theme{font-size:11px;color:#fff;background:#0b2a5a;padding:2px 7px;border-radius:20px;display:inline-block;margin-bottom:4px}
+  .likert{display:grid;grid-template-columns:1fr repeat(5,52px);gap:6px;align-items:center;margin-top:8px;font-size:12px;text-align:center}
+  .likert button{height:38px;border:2px solid #ddd;border-radius:10px;background:#fff;cursor:pointer;font-weight:bold}
+  .likert button.sel{background:#00aa55;color:#fff;border-color:#008844}
+  .likert button:disabled{opacity:.4;cursor:not-allowed}
+  .likert button.sel:disabled{opacity:1}
+  .rankRow{display:flex;gap:8px;align-items:center;margin:6px 0;font-size:13px}
+  .rankRow select{width:90px}
+  .btn{padding:13px 18px;border:none;border-radius:12px;font-weight:bold;cursor:pointer;font-size:14px;margin:4px}
+  .y{background:#ffe600}.g{background:#00ff88}.b{background:#00ccff}.r{background:#ff3b6b;color:#fff}.p{background:#ff00a8;color:#fff}.dark{background:#0b2a5a;color:#fff}
+  .dialog{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:200;display:none;align-items:center;justify-content:center;padding:16px}
+  .dialog div{background:#fff;border-radius:16px;padding:20px;max-width:480px;width:100%;max-height:80vh;overflow:auto}
+  .dialog h2{font-size:18px;margin-bottom:8px}
+  .dialog ul{font-size:13px;line-height:1.6;margin-left:18px}
+  .pdfBox{border:3px dashed #0b2a5a;border-radius:14px;padding:16px;text-align:center;background:#eef6ff}
+  .svgIcon{width:110px;height:110px;margin:8px auto}
+  @media print{
+    .topbar, .noPrint{display:none!important}
+    body{background:#fff}
+    .container{max-width:100%;margin:0;padding:0}
+    .page{box-shadow:none;border:1px solid #000;border-radius:0;break-inside:avoid}
+    .opt.selected{border:3px solid #000!important}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar noPrint">
+  <b>📋 FACTORS THAT INFLUENCE STUDENTS USING AI - SURVEY | Researcher: Ian Patrick C. Batungbacal</b>
+  <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span id="progText" style="font-size:12px">0% Complete</span><div class="progress"><div id="progFill"></div></div></div>
+</div>
+
+<div class="container" id="surveyArea">
+
+<!-- COVER / PAGE 1 -->
+<div class="page" id="page1">
+  <p class="center muted">AB MULTIMEDIA ARTS • CAPSTONE PROJECT 2 • SURVEY QUESTIONNAIRE</p>
+  <h1>Factors that Influence Students Using<br>Artificial Intelligence for Illustration and Design</h1>
+  <p class="center" style="font-size:13px;margin:8px 0;line-height:1.6"><b>Researcher:</b> Ian Patrick C. Batungbacal<br><b>Student Number:</b> 2021-1-02203<br><b>Course:</b> AB Multimedia Arts</p>
+  <div class="warn">
+    <b>⚠️ IMPORTANT INSTRUCTIONS - BASAHIN MO MUNA BAGO SUMAGOT:</b><br>
+    1. <b>Sagutan mo LAHAT. Bawal may blanko.</b> Pag pinindot mo DONE ANSWERING ALL at may blanko pa, lalabas ang dialog box na <b>"Please answer it all the blanks left"</b>.<br>
+    2. <b>Kapag nasagot mo na sa box, BAWAL KA NA MAGPALIT PA NG ANSWER.</b> Permanent na yun na talaga magiging totoong sagot mo. Para maiwasan ang erasures.<br>
+    3. <b>Sheet 1 answer is enough</b> — Isang sagot lang per question, MALIBAN kung sinabi sa questionnaire na maraming answers pwede (Select all that apply).<br>
+    4. <b>Erasures are NOT allowed</b> — Bawal burahin / palitan. Kaya isipin mo muna bago ka mag-click!<br>
+    5. Pagkatapos mo sagutan lahat, sa last page, click mo <b>PRINT FILE / DOWNLOAD ALL</b> — Automatic yung filename ay <b>buong pangalan mo</b>.
+  </div>
+  <h2>Respondent Information</h2>
+  <div class="field"><label>Respondent: * (Buong Pangalan - Ito ang magiging filename ng PDF mo)</label><input type="text" id="f_name" placeholder="Ex: Juan Dela Cruz"></div>
+  <div class="field"><label>Student Number: *</label><input type="text" id="f_snum" placeholder="Ex: 2021-1-XXXXX"></div>
+  <div class="field"><label>Course: *</label><input type="text" id="f_course" placeholder="Ex: AB Multimedia Arts"></div>
+  <div class="field"><label>Year: *</label><input type="text" id="f_year" placeholder="Ex: 4th Year"></div>
+  <div class="field"><label>Researcher: Ian Patrick C. Batungbacal</label><input type="text" value="Ian Patrick C. Batungbacal" disabled></div>
+  <div class="field"><label>Researcher Student Number: 2021-1-02203</label><input type="text" value="2021-1-02203" disabled></div>
+  <div class="field"><label>Researcher Course: AB Multimedia Arts</label><input type="text" value="AB Multimedia Arts" disabled></div>
+</div>
+
+<!-- SECTION 1 DEMOGRAPHIC -->
+<div class="page">
+  <h2>Section 1: Demographic Information</h2>
+  <div class="qbox" data-q="1.1 Age"><div class="qtitle">1.1. Age: *</div><div class="field"><input type="number" id="q_11" placeholder="Ex: 21"></div></div>
+  <div class="qbox" data-q="1.2 Gender"><div class="qtitle">1.2. Gender: *</div><div class="options" data-single="gender"><label class="opt"><input type="radio" name="gender" value="Male"> Male</label><label class="opt"><input type="radio" name="gender" value="Female"> Female</label><label class="opt"><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label></div></div>
+  <div class="qbox" data-q="1.3 Frequency"><div class="qtitle">1.3 How frequently do you use Artificial Intelligence (AI) for illustration and design? *</div><div class="options" data-single="freq1"><label class="opt"><input type="radio" name="freq1" value="Daily"> Daily</label><label class="opt"><input type="radio" name="freq1" value="Weekly"> Weekly</label><label class="opt"><input type="radio" name="freq1" value="Monthly"> Monthly</label><label class="opt"><input type="radio" name="freq1" value="Rarely"> Rarely</label><label class="opt"><input type="radio" name="freq1" value="Never"> Never</label></div></div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="page">
+  <h2>Section 2: Artificial Intelligence Usage Patterns</h2>
+  <div class="qbox" data-q="2.1 Hours per week"><div class="qtitle">2.1. On average, how many hours per week do you use AI for illustration and design? *</div><div class="options" data-single="q21"><label class="opt"><input type="radio" name="q21" value="1 - 4 hours"> 1 - 4 hours</label><label class="opt"><input type="radio" name="q21" value="5 - 9 hours"> 5 - 9 hours</label><label class="opt"><input type="radio" name="q21" value="10 or more hours"> 10 or more hours</label></div></div>
+
+  <div class="qbox" data-q="2.2 Educational content"><div class="qtitle">2.2. What types of educational content do you use Artificial Intelligence? (Select all that apply) * - Pwede marami, pero pag ni-lock mo na, lock na!</div><div class="options" data-multi="q22"><label class="opt"><input type="checkbox" value="Design"> Design</label><label class="opt"><input type="checkbox" value="Drawing"> Drawing</label><label class="opt"><input type="checkbox" value="Illustration"> Illustration</label><label class="opt"><input type="checkbox" value="Note taking"> Note taking</label><label class="opt"><input type="checkbox" value="Lecture recordings"> Lecture recordings</label><label class="opt"><input type="checkbox" value="Other"> Other</label></div><input type="text" id="q22_other" placeholder="Other (please specify): ___________________" style="margin-top:6px"></div>
+
+  <div class="qbox" data-q="2.3 Device"><div class="qtitle">2.3. What do you typically use to access Artificial Intelligence? (Select all that apply) *</div><div class="options" data-multi="q23"><label class="opt"><input type="checkbox" value="Desktop/laptop computer"> Desktop/laptop computer</label><label class="opt"><input type="checkbox" value="Smartphone"> Smartphone</label><label class="opt"><input type="checkbox" value="Tablet"> Tablet</label><label class="opt"><input type="checkbox" value="Other"> Other</label></div><input type="text" id="q23_other" placeholder="Other (please specify): ___________________" style="margin-top:6px"></div>
+
+  <div class="qbox" data-q="2.4 Proficiency"><div class="qtitle">2.4 What is your proficiency in using Artificial Intelligence for illustration and design? *</div><div class="options" data-single="q24"><label class="opt"><input type="radio" name="q24" value="Beginner"> Beginner</label><label class="opt"><input type="radio" name="q24" value="Intermediate"> Intermediate</label><label class="opt"><input type="radio" name="q24" value="Expert"> Expert</label></div></div>
+
+  <div class="qbox" data-q="2.5 Free AI"><div class="qtitle">2.5 Which free AI are you using for illustration and design? *</div><div class="options" data-single="q25"><label class="opt"><input type="radio" name="q25" value="ChatGPT"> ChatGPT</label><label class="opt"><input type="radio" name="q25" value="Google Gemini"> Google Gemini</label><label class="opt"><input type="radio" name="q25" value="Canva"> Canva</label><label class="opt"><input type="radio" name="q25" value="Adobe Firefly"> Adobe Firefly</label><label class="opt"><input type="radio" name="q25" value="Other"> Other</label></div><input type="text" id="q25_other" placeholder="Other (please specify): ___________________" style="margin-top:6px"></div>
+
+  <div class="qbox" data-q="2.6 Rank AI"><div class="qtitle">2.6 Rank the following AI according to your preference. 1 - Most preferred, 5 - Not preferred *</div>
+    <div class="rankRow">ChatGPT: <select class="rankSel" data-rank="ChatGPT"><option value="">--</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+    <div class="rankRow">Google Gemini: <select class="rankSel" data-rank="Google Gemini"><option value="">--</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+    <div class="rankRow">Canva: <select class="rankSel" data-rank="Canva"><option value="">--</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+    <div class="rankRow">Adobe Firefly: <select class="rankSel" data-rank="Adobe Firefly"><option value="">--</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+    <div class="rankRow">Other: <input type="text" id="q26_other" placeholder="Other (please specify)" style="width:160px"><select class="rankSel" data-rank="Other"><option value="">--</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+  </div>
+
+  <div class="qbox" data-q="2.7 Why using AI"><div class="qtitle">2.7 Why are you using AI for illustration and design? *</div><div class="options" data-single="q27"><label class="opt"><input type="radio" name="q27" value="Accomplish more tasks in less time"> Accomplish more tasks in less time</label><label class="opt"><input type="radio" name="q27" value="Evaluate and select best designs"> Evaluate and select best designs</label><label class="opt"><input type="radio" name="q27" value="I am a beginner"> I am a beginner</label></div></div>
+
+  <div class="qbox" data-q="2.8 % from AI"><div class="qtitle">2.8 What percentage of your creative illustrations and designs comes from AI? *</div><div class="options" data-single="q28"><label class="opt"><input type="radio" name="q28" value="76 - 90%"> 76 - 90%</label><label class="opt"><input type="radio" name="q28" value="51 - 75%"> 51 - 75%</label><label class="opt"><input type="radio" name="q28" value="26 - 50%"> 26 - 50%</label><label class="opt"><input type="radio" name="q28" value="0 - 25%"> 0 - 25%</label></div></div>
+
+  <div class="qbox" data-q="2.9 % original"><div class="qtitle">2.9 What percentage of your creative illustrations and designs are original meaning ONLY by yourself and NOT by AI? *</div><div class="options" data-single="q29"><label class="opt"><input type="radio" name="q29" value="76 - 90%"> 76 - 90%</label><label class="opt"><input type="radio" name="q29" value="51 - 75%"> 51 - 75%</label><label class="opt"><input type="radio" name="q29" value="26 - 50%"> 26 - 50%</label><label class="opt"><input type="radio" name="q29" value="0 - 25%"> 0 - 25%</label></div></div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="page">
+  <h2>Section 3: Reasons for using Artificial Intelligence</h2>
+  <div class="qbox" data-q="3.1 Motivation"><div class="qtitle">3.1. What motivates you to use Artificial Intelligence for illustration and design? (Select all that apply) *</div><div class="options" data-multi="q31"><label class="opt"><input type="checkbox" value="Speed"> Speed</label><label class="opt"><input type="checkbox" value="Convenience"> Convenience</label><label class="opt"><input type="checkbox" value="Complementary to traditional learning methods"> Complementary to traditional learning methods</label><label class="opt"><input type="checkbox" value="Improves learning"> Improves learning</label><label class="opt"><input type="checkbox" value="Free"> Free</label><label class="opt"><input type="checkbox" value="Other"> Other</label></div><input type="text" id="q31_other" placeholder="Other (please specify): ___________________" style="margin-top:6px"></div>
+</div>
+
+<!-- PART 2 -->
+<div class="page">
+  <h2>Survey Questionnaire (Part 2)</h2>
+  <p class="center"><b>Title: Factors that Influence Students Using ChatGPT for Illustration and Design</b></p>
+  <div class="qbox" data-q="P2-1 Years"><div class="qtitle">1. How many years have you been using Artificial Intelligence (AI) for illustration and design? *</div><input type="text" id="p2_1" placeholder="Ex: 2"></div>
+  <div class="qbox" data-q="P2-2 Proficiency"><div class="qtitle">2. What is your level of proficiency in using Artificial Intelligence (AI) for illustration and design? *</div><div class="options" data-single="p2_2"><label class="opt"><input type="radio" name="p2_2" value="Beginner"> Beginner</label><label class="opt"><input type="radio" name="p2_2" value="Intermediate"> Intermediate</label><label class="opt"><input type="radio" name="p2_2" value="Expert"> Expert</label></div></div>
+  <div class="qbox" data-q="P2-3 Frequency"><div class="qtitle">3. How frequently do you use Artificial Intelligence (AI) for illustration and design? *</div><div class="options" data-single="p2_3"><label class="opt"><input type="radio" name="p2_3" value="Daily"> Daily</label><label class="opt"><input type="radio" name="p2_3" value="Once a week"> Once a week</label><label class="opt"><input type="radio" name="p2_3" value="Twice a week"> Twice a week</label><label class="opt"><input type="radio" name="p2_3" value="Thrice a week"> Thrice a week</label></div></div>
+  <div class="qbox" data-q="P2-4 Hours per day"><div class="qtitle">4. How many hours do you use Artificial Intelligence (AI) for illustration and design in a day? *</div><div class="options" data-single="p2_4"><label class="opt"><input type="radio" name="p2_4" value="1 hour"> 1 hour</label><label class="opt"><input type="radio" name="p2_4" value="2 hours"> 2 hours</label><label class="opt"><input type="radio" name="p2_4" value="3 hours"> 3 hours</label><label class="opt"><input type="radio" name="p2_4" value="4 or more hours"> 4 or more hours</label></div></div>
+  <div class="qbox" data-q="P2-5 Years category"><div class="qtitle">5. How many years have you been using Artificial Intelligence (AI) for illustration and design? *</div><div class="options" data-single="p2_5"><label class="opt"><input type="radio" name="p2_5" value="1 year"> 1 year</label><label class="opt"><input type="radio" name="p2_5" value="2 years"> 2 years</label><label class="opt"><input type="radio" name="p2_5" value="3 years"> 3 years</label><label class="opt"><input type="radio" name="p2_5" value="> 4 years"> > 4 years</label></div></div>
+</div>
+
+<!-- LIKERT 1-30 -->
+<div class="page">
+  <h2>Direction: Please put a check mark (✓) in the box that corresponds to your answer.</h2>
+  <p style="font-size:13px;text-align:center">Use the following scale: <b>1 - Strongly Disagree, 2 - Disagree, 3 - Uncertain, 4 - Agree, 5 - Strongly Agree</b><br><span style="color:#b10000">⚠️ Once you click 1-5, LOCKED NA! Hindi mo na pwede palitan!</span></p>
+  <div id="likertBox"></div>
+</div>
+
+<!-- LAST PAGE - PDF / DOWNLOAD -->
+<div class="page" id="lastPage">
+  <h2>✅ LAST PAGE - Done Answering All</h2>
+  <p style="font-size:13px;line-height:1.6">Pag nasagutan mo na lahat, lalabas dito ang summary ng sagot mo. Siguraduhin mo na walang blanko bago ka mag-download.</p>
+  <div id="summaryBox" style="font-size:12px;line-height:1.6;background:#f9f9f9;padding:12px;border-radius:10px;margin:10px 0;white-space:pre-wrap">Hindi pa kumpleto. Sagutan mo muna lahat sa taas.</div>
+
+  <div class="pdfBox">
+    <div class="svgIcon">
+      <svg viewBox="0 0 100 100" width="110" height="110"><rect x="10" y="15" width="80" height="70" rx="8" fill="#ff0000"/><text x="50" y="55" font-size="16" fill="white" text-anchor="middle" font-weight="bold">PDF</text><text x="50" y="72" font-size="9" fill="white" text-anchor="middle">FILE</text></svg>
+    </div>
+    <h3>📄 PDF / SVG FILE - PRINT FILE</h3>
+    <p class="muted">Click mo para lumabas yung Print File. Sa print dialog, piliin mo "Save as PDF". Automatic yung filename ay buong pangalan mo!</p>
+    <button class="dark btn" onclick="printFile()">🖨️ PRINT FILE - Click to Print / Save as PDF</button><br>
+    <button class="y btn" onclick="downloadAll()">⬇️ DOWNLOAD ALL MY ANSWER SHEETS + SURVEY QUESTIONNAIRE</button><br>
+    <button class="g btn" onclick="checkAll()">✅ DONE ANSWERING ALL - Check if may blanko pa</button>
+    <p class="muted" id="fileNamePreview" style="margin-top:8px">Filename preview: <b id="fileNameText">- Sagutan mo muna pangalan mo sa Page 1 -</b></p>
+  </div>
+  <p class="muted center" style="margin-top:10px">Thank you for answering! - Ian Patrick C. Batungbacal | 2021-1-02203 | AB Multimedia Arts</p>
+</div>
+
+</div>
+
+<!-- DIALOG BOX - PLEASE ANSWER IT ALL -->
+<div class="dialog" id="blankDialog">
+  <div>
+    <h2>⚠️ Please answer it all the blanks left!</h2>
+    <p style="font-size:13px;line-height:1.5">Hindi ka pa tapos! May <b id="blankCount">0</b> na blanko pa. Sagutan mo muna lahat bago ka mag-DONE.</p>
+    <ul id="blankList"></ul>
+    <button class="y btn" onclick="closeDialog()">OK, SASAGUTAN KO PA</button>
+  </div>
+</div>
+
+<div class="dialog" id="successDialog">
+  <div>
+    <h2>🎉 DONE ANSWERING ALL!</h2>
+    <p style="font-size:13px;line-height:1.6">Walang blanko! Kumpleto na lahat ng sagot mo!<br>Ngayon, pwede ka na mag-PRINT FILE o DOWNLOAD ALL.<br><br><b>Note:</b> Locked na lahat ng answers mo. Hindi mo na pwede palitan. Permanent na yan.</p>
+    <button class="g btn" onclick="closeSuccess(); printFile()">🖨️ PRINT FILE NA!</button>
+    <button class="y btn" onclick="closeSuccess(); downloadAll()">⬇️ DOWNLOAD ALL NA!</button>
+    <button class="btn" onclick="closeSuccess()">Close</button>
+  </div>
+</div>
+
+<script>
+const likertData=[
+ [1,"UP","Artificial Intelligence helps me create designs more easily."],
+ [2,"UP","Artificial Intelligence saves me time when working on illustration and design projects."],
+ [3,"CR","Artificial Intelligence helps me come up with new ideas for my illustration and design projects."],
+ [4,"UP","Artificial Intelligence makes the design process more convenient for me."],
+ [5,"CR","Artificial Intelligence improves the quality of my ideas for illustration and design projects."],
+ [6,"LS","Artificial Intelligence helps me create designs even when I have limited design skills."],
+ [7,"UP","Artificial Intelligence allows me to complete design tasks faster."],
+ [8,"DQ","Artificial Intelligence helps me select appropriate layouts and design elements."],
+ [9,"DQ","Artificial Intelligence improves the quality of my designs."],
+ [10,"CR","Artificial Intelligence encourages me to experiment with different design ideas."],
+ [11,"UP","Artificial Intelligence helps me become more productive when creating visual materials."],
+ [12,"LS","Artificial Intelligence makes learning and practice easier."],
+ [13,"LS","Artificial Intelligence increases my confidence in creating designs."],
+ [14,"SI","My classmates influenced my decision to use Artificial Intelligence for illustration and design."],
+ [15,"SI","Recommendations from other students encourage me to use Artificial Intelligence for design tasks."],
+ [16,"CR","Artificial Intelligence supports the development of my creativity and creative thinking."],
+ [17,"LS","Artificial Intelligence helps improve my digital literacy and digital competence."],
+ [18,"UP","Artificial Intelligence helps me complete my illustration and design tasks more effectively."],
+ [19,"CR","Artificial Intelligence helps me explore and develop different ideas for my illustration and design projects."],
+ [20,"AF","Limited availability of devices can be a challenge when using Artificial Intelligence."],
+ [21,"CR","Using Artificial Intelligence helps me be more creative when working on illustration and design projects."],
+ [22,"TF","I prefer to use freehand drawing as opposed to Artificial Intelligence"],
+ [23,"AF","Artificial Intelligence is convenient to access when I work on illustration and design tasks."],
+ [24,"LS","Artificial Intelligence supports my independent learning in illustration and design."],
+ [25,"CR","I am concerned that using Artificial Intelligence decreases my sense of originality."],
+ [26,"CR","I am concerned that using Artificial Intelligence decreases my creativity."],
+ [27,"CR","I am concerned about becoming too dependent on Artificial Intelligence for design tasks."],
+ [28,"CR","I am concerned about copyright issues when using Artificial Intelligence for creative work."],
+ [29,"CR","I always disclose the use of Artificial Intelligence in my illustration and design tasks."],
+ [30,"","I intend to continue using Artificial Intelligence for future illustration and design projects."]
+];
+let likertBox=document.getElementById('likertBox');
+likertData.forEach(function(item){
+  let num=item[0], theme=item[1], stmt=item[2];
+  let div=document.createElement('div'); div.className='qbox'; div.setAttribute('data-q','Likert Q'+num);
+  div.innerHTML='<div class="qtitle"><span class="theme">'+(theme||'GEN')+'</span> Q'+num+'. '+stmt+'</div><div class="likert"><span>Statement</span><span>1<br>Strongly<br>Disagree</span><span>2<br>Disagree</span><span>3<br>Uncertain</span><span>4<br>Agree</span><span>5<br>Strongly<br>Agree</span></div><div class="likert" data-likert="'+num+'"><span style="font-size:11px;text-align:left">✓ Choose 1-5:</span></div>';
+  let row=div.querySelector('[data-likert]');
+  for(let i=1;i<=5;i++){
+    let b=document.createElement('button'); b.textContent=i; b.setAttribute('data-val',i);
+    b.onclick=function(){
+      if(b.disabled) return;
+      if(!confirm("Sigurado ka na sa sagot mo na "+i+" sa Q"+num+"? LOCKED NA ITO, hindi mo na pwede palitan!")) return;
+      row.querySelectorAll('button').forEach(function(x){ x.classList.remove('sel'); x.disabled=true; });
+      b.classList.add('sel'); b.disabled=false;
+      div.classList.add('lockedQ');
+      updateProgress(); buildSummary();
+    };
+    row.appendChild(b);
+  }
+  likertBox.appendChild(div);
+});
+
+// SINGLE CHOICE - LOCK AFTER ANSWER
+document.querySelectorAll('[data-single]').forEach(function(group){
+  group.querySelectorAll('input[type="radio"]').forEach(function(radio){
+    radio.addEventListener('change', function(){
+      if(!confirm("Sigurado ka na sa sagot mo na '"+radio.value+"'? LOCKED NA ITO, hindi mo na pwede palitan!")){ radio.checked=false; return; }
+      group.querySelectorAll('label.opt').forEach(function(l){ l.classList.add('locked'); });
+      group.querySelectorAll('input').forEach(function(inp){ inp.disabled=true; });
+      radio.closest('label').classList.add('selected');
+      radio.disabled=false;
+      radio.closest('.qbox').classList.add('lockedQ');
+      updateProgress(); buildSummary();
+    });
+  });
+});
+
+// MULTI - LOCK AFTER CONFIRM - need to add LOCK button behavior via double click? We lock on blur of other field + we lock when user clicks outside? Simpler: lock when user clicks LOCK button we inject
+document.querySelectorAll('[data-multi]').forEach(function(group){
+  let qbox=group.closest('.qbox');
+  let lockBtn=document.createElement('button'); lockBtn.className='btn y'; lockBtn.textContent='🔒 LOCK THIS ANSWER - Hindi na pwede palitan!';
+  lockBtn.style.marginTop='6px';
+  lockBtn.onclick=function(){
+    let checked=group.querySelectorAll('input:checked');
+    if(checked.length===0){ alert("Pumili ka muna kahit isa bago mag-LOCK!"); return; }
+    if(!confirm("Sigurado ka na? LOCKED NA ITO, hindi mo na pwede palitan!")) return;
+    group.querySelectorAll('input').forEach(function(inp){ inp.disabled=true; });
+    group.querySelectorAll('label.opt').forEach(function(l){ l.classList.add('locked'); if(l.querySelector('input').checked) l.classList.add('selected'); });
+    lockBtn.disabled=true; lockBtn.textContent='🔒 LOCKED - Permanent Answer';
+    qbox.classList.add('lockedQ');
+    updateProgress(); buildSummary();
+  };
+  qbox.appendChild(lockBtn);
+});
+
+// TEXT INPUTS - LOCK ON BLUR AFTER CONFIRM
+document.querySelectorAll('input[type="text"], input[type="number"]').forEach(function(inp){
+  if(inp.disabled) return;
+  inp.addEventListener('change', function(){
+    if(!inp.value.trim()) return;
+    if(inp.classList.contains('locked')) return;
+    // For Other fields, don't lock immediately, lock on Done check
+    if(inp.id.includes('_other')) return;
+    if(!confirm("Sigurado ka na sa '"+inp.value+"'? LOCKED NA ITO, hindi mo na pwede palitan!")){ inp.value=''; return; }
+    inp.classList.add('locked'); inp.readOnly=true;
+    updateProgress(); buildSummary();
+  });
+});
+// RANK SELECT - LOCK
+document.querySelectorAll('.rankSel').forEach(function(sel){
+  sel.addEventListener('change', function(){
+    if(!sel.value) return;
+    if(!confirm("Sigurado ka na sa Rank "+sel.value+"? LOCKED NA ITO!")){ sel.value=''; return; }
+    sel.classList.add('locked'); sel.disabled=true;
+    updateProgress(); buildSummary();
+  });
+});
+
+function getMissing(){
+  let missing=[];
+  let name=document.getElementById('f_name').value.trim();
+  if(!name) missing.push("Respondent - Buong Pangalan (Page 1)");
+  if(!document.getElementById('f_snum').value.trim()) missing.push("Student Number (Page 1)");
+  if(!document.getElementById('f_course').value.trim()) missing.push("Course (Page 1)");
+  if(!document.getElementById('f_year').value.trim()) missing.push("Year (Page 1)");
+  if(!document.getElementById('q_11').value.trim()) missing.push("1.1 Age");
+  if(!document.querySelector('input[name="gender"]:checked')) missing.push("1.2 Gender");
+  if(!document.querySelector('input[name="freq1"]:checked')) missing.push("1.3 Frequency");
+  if(!document.querySelector('input[name="q21"]:checked')) missing.push("2.1 Hours per week");
+  if(document.querySelectorAll('[data-multi="q22"] input:checked').length===0) missing.push("2.2 Educational content (Select all that apply)");
+  if(document.querySelectorAll('[data-multi="q23"] input:checked').length===0) missing.push("2.3 Device (Select all that apply)");
+  if(!document.querySelector('input[name="q24"]:checked')) missing.push("2.4 Proficiency");
+  if(!document.querySelector('input[name="q25"]:checked')) missing.push("2.5 Free AI");
+  // rank
+  let rankCount=0; document.querySelectorAll('.rankSel').forEach(function(s){ if(s.value) rankCount++; });
+  if(rankCount<4) missing.push("2.6 Rank AI - Kulang pa, i-rank mo lahat ng 4 main AI");
+  if(!document.querySelector('input[name="q27"]:checked')) missing.push("2.7 Why using AI");
+  if(!document.querySelector('input[name="q28"]:checked')) missing.push("2.8 % from AI");
+  if(!document.querySelector('input[name="q29"]:checked')) missing.push("2.9 % original");
+  if(document.querySelectorAll('[data-multi="q31"] input:checked').length===0) missing.push("3.1 Motivation (Select all that apply)");
+  if(!document.getElementById('p2_1').value.trim()) missing.push("Part 2 Q1 - How many years");
+  if(!document.querySelector('input[name="p2_2"]:checked')) missing.push("Part 2 Q2 - Proficiency");
+  if(!document.querySelector('input[name="p2_3"]:checked')) missing.push("Part 2 Q3 - Frequency");
+  if(!document.querySelector('input[name="p2_4"]:checked')) missing.push("Part 2 Q4 - Hours per day");
+  if(!document.querySelector('input[name="p2_5"]:checked')) missing.push("Part 2 Q5 - Years category");
+  for(let i=1;i<=30;i++){
+    let row=document.querySelector('[data-likert="'+i+'"]');
+    if(row && !row.querySelector('button.sel')) missing.push("Likert Q"+i+" - 1 to 5");
+  }
+  return missing;
+}
+function updateProgress(){
+  let missing=getMissing();
+  let total=55; // approx total required
+  let done=total-missing.length;
+  let pct=Math.max(0, Math.min(100, Math.round(done/total*100)));
+  document.getElementById('progFill').style.width=pct+"%";
+  document.getElementById('progText').textContent=pct+"% Complete - "+done+" / "+total+" answered";
+  let name=document.getElementById('f_name').value.trim()||"Your Name";
+  document.getElementById('fileNameText').textContent=name+" - Factors that Influence Students Using AI for Illustration and Design.pdf";
+}
+function checkAll(){
+  let missing=getMissing();
+  if(missing.length>0){
+    document.getElementById('blankCount').textContent=missing.length;
+    let ul=document.getElementById('blankList'); ul.innerHTML="";
+    missing.forEach(function(m){ let li=document.createElement('li'); li.textContent=m; ul.appendChild(li); });
+    document.getElementById('blankDialog').style.display='flex';
+  }else{
+    document.getElementById('successDialog').style.display='flex';
+  }
+  updateProgress(); buildSummary();
+}
+function closeDialog(){ document.getElementById('blankDialog').style.display='none'; }
+function closeSuccess(){ document.getElementById('successDialog').style.display='none'; }
+function buildSummary(){
+  let name=document.getElementById('f_name').value||"(blank)";
+  let snum=document.getElementById('f_snum').value||"(blank)";
+  let course=document.getElementById('f_course').value||"(blank)";
+  let year=document.getElementById('f_year').value||"(blank)";
+  let txt="RESPONDENT: "+name+" | "+snum+" | "+course+" | "+year+"\n";
+  txt+="RESEARCHER: Ian Patrick C. Batungbacal | 2021-1-02203 | AB Multimedia Arts\n\n";
+  txt+="--- SUMMARY (Auto-generated) ---\n";
+  txt+="Age: "+(document.getElementById('q_11').value||"blank")+"\n";
+  let g=document.querySelector('input[name="gender"]:checked'); txt+="Gender: "+(g?g.value:"blank")+"\n";
+  let f=document.querySelector('input[name="freq1"]:checked'); txt+="Frequency: "+(f?f.value:"blank")+"\n";
+  for(let i=1;i<=30;i++){
+    let row=document.querySelector('[data-likert="'+i+'"]'); let sel=row?row.querySelector('button.sel'):null;
+    txt+="Likert Q"+i+": "+(sel?sel.textContent:"blank")+"\n";
+  }
+  document.getElementById('summaryBox').textContent=txt;
+}
+function getFileName(){
+  let name=document.getElementById('f_name').value.trim()||"Unnamed Respondent";
+  // Clean filename - alisin special chars
+  name=name.replace(/[^a-zA-Z0-9 ]/g,'').trim();
+  return name+" - Factors that Influence Students Using AI for Illustration and Design";
+}
+function printFile(){
+  let missing=getMissing();
+  if(missing.length>0){
+    alert("⚠️ Please answer it all the blanks left! May "+missing.length+" blanko pa.\n\n"+missing.slice(0,10).join("\n"));
+    checkAll();
+    return;
+  }
+  document.title=getFileName();
+  window.print();
+}
+function downloadAll(){
+  let missing=getMissing();
+  if(missing.length>0){
+    alert("⚠️ Please answer it all the blanks left! May "+missing.length+" blanko pa. Sagutan mo muna lahat!");
+    checkAll();
+    return;
+  }
+  // DOWNLOAD ALL - Print + also download as HTML file with respondent name
+  let name=getFileName();
+  // 1. Trigger Print (Save as PDF)
+  document.title=name;
+  // 2. Also download HTML copy as backup
+  let htmlContent=document.documentElement.outerHTML;
+  let blob=new Blob([htmlContent], {type:'text/html'});
+  let a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name+".html"; a.click();
+  setTimeout(function(){ window.print(); },500);
+  alert("✅ DOWNLOADING ALL!\n\nFilename: "+name+".pdf / .html\n\n1. Nag-download na yung HTML copy mo.\n2. Lalabas na yung PRINT FILE - piliin mo 'Save as PDF' para ma-save yung PDF na may pangalan mo!\n\nThank you, "+document.getElementById('f_name').value+"!");
+}
+document.getElementById('f_name').addEventListener('input', updateProgress);
+updateProgress();
+</script>
+</body>
+</html>
